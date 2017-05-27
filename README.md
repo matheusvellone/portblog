@@ -1,32 +1,33 @@
-=============================
-Sleek Blog
-=============================
+PortBlog
+---
 
-[Live Website](http://gearoidoconnor.ie)
+[Live Website](https://matheusvellone.github.io/portblog)
 
+This is a the source code for my personal portfolio/blog which can be accessed [here](https://matheusvellone.github.io/portblog) 
 
-A blog project including full setup for Jekyll, GulpJS, SASS, AutoPrefixer &amp; BrowserSync
+The code is based in [sleek_blog](https://github.com/bawn92/sleek_blog)
 
-
-## System Preparation
+## Setup
 
 To use this project, you'll need the following things installed on your machine.
 
 1. [Jekyll](http://jekyllrb.com/) - `$ gem install jekyll`
-2. [NodeJS](http://nodejs.org) - use the installer.
-3. [GulpJS](https://github.com/gulpjs/gulp) - `$ npm install -g gulp` (mac users may need sudo)
-
-## Local Installation
-
-1. Clone this repo, or download it into a directory of your choice.
-2. Inside the directory, run `npm install`.
+2. [Bundler](http://bundler.io/) - `$ gem install bundler`
+3. [NodeJS](http://nodejs.org) - use the installer or [nvm](https://github.com/creationix/nvm) (recomended).
+4. [GulpJS](http://gulpjs.com) - `$ npm install -g gulp`
 
 ## Usage
 
-**development mode**
+1. Clone this repo, or download it into a directory of your choice.
+2. Inside the directory, run `npm install` and `bundle install`
 
-This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc etc.
+**Development mode**
+
+This will start a local server listening to `localhost:3000` and give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc etc.
 
 ```shell
-$ gulp
+$ npm start
 ```
+## LICENSE
+
+MIT

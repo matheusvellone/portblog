@@ -1,9 +1,9 @@
-const gulp        = require('gulp');
+const gulp = require('gulp');
 const browserSync = require('browser-sync');
-const sass        = require('gulp-sass');
-const prefix      = require('gulp-autoprefixer');
-const cp          = require('child_process');
-const jade        = require('gulp-jade');
+const sass = require('gulp-sass');
+const prefix = require('gulp-autoprefixer');
+const cp = require('child_process');
+const jade = require('gulp-jade');
 
 const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -28,7 +28,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['sass', 'jekyll-build'], function () {
     browserSync({
         server: {
             baseDir: '_site'
@@ -46,22 +46,11 @@ gulp.task('sass', function () {
             includePaths: ['css'],
             onError: browserSync.notify
         }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
         .pipe(gulp.dest('_site/assets/css'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream: true}))
         .pipe(gulp.dest('assets/css'));
 });
-
-/*
-* Travis is trying to Gulp stuff
-*/
-
-gulp.task('jade', function(){
-  return gulp.src('_jadefiles/*.jade')
-  .pipe(jade())
-  .pipe(gulp.dest('_includes'));
-});
-
 
 /**
  * Watch scss files for changes & recompile
