@@ -1,5 +1,5 @@
-jQuery(document).ready(function ($) {
-    var timelineBlocks = $('.cd-timeline-block'),
+$(document).ready(function ($) {
+    const timelineBlocks = $('.cd-timeline-block'),
         offset = 0.8;
 
     //hide timeline blocks which are outside the viewport
