@@ -1,16 +1,13 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var cp          = require('child_process');
-var jade        = require('gulp-jade');
+const gulp        = require('gulp');
+const browserSync = require('browser-sync');
+const sass        = require('gulp-sass');
+const prefix      = require('gulp-autoprefixer');
+const cp          = require('child_process');
+const jade        = require('gulp-jade');
 
-var messages = {
+const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
-
-
-
 
 /**
  * Build the Jekyll Site
@@ -21,18 +18,12 @@ gulp.task('jekyll-build', function (done) {
         .on('close', done);
 });
 
-
-
-
 /**
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
     browserSync.reload();
 });
-
-
-
 
 /**
  * Wait for jekyll-build, then launch the Server
@@ -45,9 +36,6 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
         notify: false
     });
 });
-
-
-
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
@@ -86,9 +74,6 @@ gulp.task('watch', function () {
     gulp.watch('assets/js/**', ['jekyll-rebuild']);
     gulp.watch('_jadefiles/*.jade', ['jade']);
 });
-
-
-
 
 /**
  * Default task, running just `gulp` will compile the sass,
