@@ -16,7 +16,7 @@
     padding-top: 20%;
     overflow: hidden;
     background: {
-      image: url(../img/project.png);
+      image: url($baseImageURL + 'project.png');
       position: center center;
       repeat: no-repeat;
       size: cover;

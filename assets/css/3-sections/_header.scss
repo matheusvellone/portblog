@@ -2,7 +2,7 @@
   .logo {
     @include size(70px);
 
-    background: url(../img/GOC1.png) center center;
+    background: url($baseImageURL + 'GOC1.png') center center;
     background-size: 70px 47px;
     background-repeat: no-repeat;
     position: fixed;
@@ -23,7 +23,7 @@
     z-index: 998;
     right: 20px;
     bottom: 20px;
-    background: url(../img/silhouette125.svg) no-repeat center;
+    background: url($baseImageURL + 'silhouette125.svg') no-repeat center;
     background-size: 15px;
     background-color: $color-1;
     -webkit-border-radius: 30px;
@@ -41,7 +41,7 @@
   .logo {
     @include size(90px);
 
-    background: url(../img/GOC1.png) center center;
+    background: url($baseImageURL + 'GOC1.png') center center;
     width: 88px;
     height: 47px;
     background-size: 88px 47px;
@@ -72,7 +72,7 @@ header {
   }
 
 
-  background: url(../img/galway2.jpg) center center;
+  background: url($baseImageURL + 'galway2.jpg') center center;
   background-size: cover;
 
   nav {

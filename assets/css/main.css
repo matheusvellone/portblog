@@ -598,7 +598,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
   .logo {
     height: 70px;
     width: 70px;
-    background: url(../img/GOC1.png) center center;
+    background: url("https://matheusvellone.github.io/portblog/assets/img/GOC1.png") center center;
     background-size: 70px 47px;
     background-repeat: no-repeat;
     position: fixed;
@@ -617,7 +617,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
     z-index: 998;
     right: 20px;
     bottom: 20px;
-    background: url(../img/silhouette125.svg) no-repeat center;
+    background: url("https://matheusvellone.github.io/portblog/assets/img/silhouette125.svg") no-repeat center;
     background-size: 15px;
     background-color: #303e49;
     border-radius: 30px; } }
@@ -628,7 +628,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
   .logo {
     height: 90px;
     width: 90px;
-    background: url(../img/GOC1.png) center center;
+    background: url("https://matheusvellone.github.io/portblog/assets/img/GOC1.png") center center;
     width: 88px;
     height: 47px;
     background-size: 88px 47px;
@@ -639,7 +639,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
     display: none; } }
 
 header {
-  background: url(../img/galway2.jpg) center center;
+  background: url("https://matheusvellone.github.io/portblog/assets/img/galway2.jpg") center center;
   background-size: cover; }
   @media only screen and (min-width: 220px) {
     header {
@@ -705,7 +705,7 @@ header {
     color: rgba(0, 0, 0, 0.5); }
 
 footer {
-  background: url(../img/galway3.jpg) center center;
+  background: url("https://matheusvellone.github.io/portblog/assets/img/galway3.jpg") center center;
   background-size: cover; }
   footer .lockup {
     padding: 50px 30px; }
@@ -713,11 +713,13 @@ footer {
       clear: both;
       content: "";
       display: table; }
-    footer .lockup .content-wrap .copyright {
-      margin: 0;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.4); }
+    footer .lockup .content-wrap {
+      float: left; }
+      footer .lockup .content-wrap .copyright {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.4); }
     footer .lockup a {
       color: rgba(0, 0, 0, 0.6);
       display: inline-block;
@@ -739,12 +741,12 @@ footer {
       display: flex;
       margin: auto;
       border-radius: 60%;
-      background: url(../img/face.JPG) no-repeat; }
+      background: url("https://matheusvellone.github.io/portblog/assets/img/face.JPG") no-repeat; }
     .about-lock .face1-img {
       height: 180px;
       width: 180px;
       border-radius: 50%;
-      background: url(../img/android.JPG);
+      background: url("https://matheusvellone.github.io/portblog/assets/img/android.JPG");
       margin: auto; }
     .about-lock .flip-container {
       -webkit-perspective: 1000;
@@ -1354,7 +1356,7 @@ form {
 
 #h_small {
   height: 170px;
-  background: url(../img/galway2.jpg) center center;
+  background: url("https://matheusvellone.github.io/portblog/assets/img/galway2.jpg") center center;
   background-size: cover; }
   #h_small #nav_small {
     float: right;
@@ -1397,7 +1399,7 @@ form {
     padding: 10px;
     padding-top: 20%;
     overflow: hidden;
-    background-image: url(../img/project.png);
+    background-image: url("https://matheusvellone.github.io/portblog/assets/img/project.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; }

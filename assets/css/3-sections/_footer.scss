@@ -1,5 +1,5 @@
 footer {
-  background: url(../img/galway3.jpg) center center;
+  background: url($baseImageURL + 'galway3.jpg') center center;
   background-size: cover;
 
   .lockup {
@@ -8,7 +8,7 @@ footer {
     @include clearfix;
 
     .content-wrap {
-      float:left {}
+      float: left;
 
       .copyright {
         margin: 0;

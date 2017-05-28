@@ -8,14 +8,14 @@
 
       margin: auto;
       border-radius: 60%;
-      background: url(../img/face.JPG) no-repeat;
+      background: url($baseImageURL + 'face.JPG') no-repeat;
     }
 
     .face1-img {
       @include size(180px);
 
       border-radius: 50%;
-      background: url(../img/android.JPG);
+      background: url($baseImageURL + 'android.JPG');
       margin: auto;
     }
 
