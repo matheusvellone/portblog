@@ -1,66 +1,66 @@
 form {
-  max-width: 450px;
-  margin: 0 auto 50px;
+    max-width: 450px;
+    margin: 0 auto 50px;
 
-  input, textarea {
-    border: 2px solid $color-1;
-    width: 100%;
+    input, textarea {
+        border: 2px solid $color-1;
+        width: 100%;
 
-    @include box-sizing(border-box);
+        @include box-sizing(border-box);
 
-    padding: 10px;
+        padding: 10px;
 
-    &:focus {
-      outline: none;
-      border-color: lighten($color-1, 50%);
+        &:focus {
+            outline: none;
+            border-color: lighten($color-1, 50%);
+        }
     }
-  }
 
-  .submit-wrap {
-    text-align: right;
-  }
-
-  [type="submit"] {
-    margin-top: 13px;
-    background: $color-1;
-    color: white;
-    font-size: 18px;
-    text-transform: uppercase;
-    width: 33%;
-
-    &:hover {
-      background: lighten($color-1, 20%);
-      border-color: lighten($color-1, 20%);
+    .submit-wrap {
+        text-align: right;
     }
-  }
 
-  textarea {
-    height: 10em;
-  }
+    [type="submit"] {
+        margin-top: 13px;
+        background: $color-1;
+        color: white;
+        font-size: 18px;
+        text-transform: uppercase;
+        width: 33%;
 
-  .contact-info-group {
+        &:hover {
+            background: lighten($color-1, 20%);
+            border-color: lighten($color-1, 20%);
+        }
+    }
+
+    textarea {
+        height: 10em;
+    }
+
+    .contact-info-group {
+        label {
+            width: 50%;
+            float: left;
+
+            @include box-sizing(border-box);
+
+            &:nth-child(1) {
+                padding-right: 10px;
+            }
+
+            &:nth-child(2) {
+                padding-left: 10px;
+            }
+        }
+    }
+
     label {
-      width: 50%;
-      float: left;
+        display: block;
+        margin-bottom: 20px;
 
-      @include box-sizing(border-box);
-
-      &:nth-child(1) {
-        padding-right: 10px;
-      }
-
-      &:nth-child(2) {
-        padding-left: 10px;
-      }
+        span {
+            display: block;
+        }
     }
-  }
-
-  label {
-    display: block;
-    margin-bottom: 20px;
-
-    span {
-      display: block;
-    }
-  }
 }

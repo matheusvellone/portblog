@@ -47,4 +47,6 @@ $text-color: #666;
 
 $theme-color: $red;
 
-$baseImageURL: 'https://matheusvellone.github.io/portblog/assets/img/';
+$baseURL: 'https://matheusvellone.github.io/portblog/';
+$baseAssetsURL: $baseURL + 'assets/';
+$baseImageURL: $baseAssetsURL + 'img/';

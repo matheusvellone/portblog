@@ -1,152 +1,149 @@
 @include MQ(S) {
-  .about-lock {
-    margin: auto;
+    .about-lock {
+        margin: auto;
 
-    .face-img {
-      @include size(180px);
-      @include display(flex);
+        .face-img {
+            @include size(180px);
+            @include display(flex);
 
-      margin: auto;
-      border-radius: 60%;
-      background: url($baseImageURL + 'face.JPG') no-repeat;
+            margin: auto;
+            border-radius: 60%;
+            background: url($baseImageURL + 'face.JPG') no-repeat;
+        }
+
+        .face1-img {
+            @include size(180px);
+
+            border-radius: 50%;
+            background: url($baseImageURL + 'android.JPG');
+            margin: auto;
+        }
+
+        .flip-container {
+            perspective: 1000;
+
+            &:hover .flipper, &.hover .flipper {
+                transform: rotateY(180deg);
+            }
+
+            @include size(200px);
+
+            border-radius: 50%;
+
+            @include order(3);
+        }
+
+        .front, .back {
+            @include size(200px);
+
+            border-radius: 50%;
+        }
+
+        .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .front, .back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .flaticon-cogwheel28 {
+            display: none;
+        }
+
+        .flaticon-computer1 {
+            display: none;
+        }
+
+        .flaticon-hosting {
+            display: none;
+        }
+
+        .flaticon-computers13 {
+            display: none;
+        }
     }
-
-    .face1-img {
-      @include size(180px);
-
-      border-radius: 50%;
-      background: url($baseImageURL + 'android.JPG');
-      margin: auto;
-    }
-
-    .flip-container {
-      perspective: 1000;
-
-      &:hover .flipper, &.hover .flipper {
-        transform: rotateY(180deg);
-      }
-
-      @include size(200px);
-
-      border-radius: 50%;
-
-      @include order(3);
-    }
-
-    .front, .back {
-      @include size(200px);
-
-      border-radius: 50%;
-    }
-
-    .flipper {
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-    }
-
-    .front, .back {
-      backface-visibility: hidden;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .front {
-      z-index: 2;
-      transform: rotateY(0deg);
-    }
-
-    .back {
-      transform: rotateY(180deg);
-    }
-
-    .flaticon-cogwheel28 {
-      display: none;
-    }
-
-    .flaticon-computer1 {
-      display: none;
-    }
-
-    .flaticon-hosting {
-      display: none;
-    }
-
-    .flaticon-computers13 {
-      display: none;
-    }
-  }
 }
-
 
 @include MQ(M) {
-  .about-lock {
-    max-width: 680px;
+    .about-lock {
+        max-width: 680px;
 
-    @include display(flex);
+        @include display(flex);
 
-    margin: 0 auto;
+        margin: 0 auto;
 
-    @include align-items(center);
-    @include justify-content(space-between);
+        @include align-items(center);
+        @include justify-content(space-between);
 
-    .flaticon-cogwheel28 {
-      @include order(1);
+        .flaticon-cogwheel28 {
+            @include order(1);
 
-      display: block;
+            display: block;
+        }
+
+        .flaticon-computer1 {
+            @include order(2);
+
+            display: block;
+        }
+
+        .flaticon-hosting {
+            @include order(4);
+
+            display: block;
+        }
+
+        .flaticon-computers13 {
+            @include order(5);
+
+            display: block;
+        }
+
+        .glyph-icon {
+            &:hover {
+                @include transform(scale(1.2));
+            }
+        }
+
+        .glyph-icon:before {
+            display: block;
+            font-size: 60px;
+            line-height: 70px;
+            color: $color-1;
+
+            @include transition;
+
+            margin-left: 0;
+        }
     }
-
-    .flaticon-computer1 {
-      @include order(2);
-
-      display: block;
-    }
-
-    .flaticon-hosting {
-      @include order(4);
-
-      display: block;
-    }
-
-    .flaticon-computers13 {
-      @include order(5);
-
-      display: block;
-    }
-
-    .glyph-icon {
-      &:hover {
-        @include transform(scale(1.2));
-      }
-    }
-
-    .glyph-icon:before {
-      display: block;
-      font-size: 60px;
-      line-height: 70px;
-      color: $color-1;
-
-      @include transition;
-
-      margin-left: 0;
-    }
-  }
 }
-
 
 @include MQ(L) {
-  .about-lock {
-    max-width: 980px;
-  }
+    .about-lock {
+        max-width: 980px;
+    }
 }
 
-
 .blurb {
-  max-width: 750px;
-  padding: 0 15px;
-  margin: 50px auto;
-  font-size: 22px;
-  font-weight: 30;
-  text-align: center;
+    max-width: 750px;
+    padding: 0 15px;
+    margin: 50px auto;
+    font-size: 22px;
+    font-weight: 30;
+    text-align: center;
 }
