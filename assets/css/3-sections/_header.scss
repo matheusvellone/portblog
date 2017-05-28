@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     position: fixed;
     left: 5px;
-    top: 0px;
+    top: 0;
     padding-right: 5px;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -51,7 +51,7 @@
   }
 
   a.back-to-top {
-    display:none {}
+    display: none;
   }
 }
 
@@ -113,7 +113,7 @@ header {
       padding-top: 20px;
       font: {
         size: 32px;
-        weight: 350;
+        weight: 300;
       };
     }
 
@@ -122,7 +122,7 @@ header {
       padding-top: 10px;
       font: {
         size: 30px;
-        weight: 350;
+        weight: 300;
       };
     }
 

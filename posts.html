@@ -1,11 +1,10 @@
 ---
 layout: default
+title: Posts
+permalink: /blog/
 ---
 
-{% include header.html %}
-{% include about.html %}
-{% include history.html %}
-
+{% include header_small.html %}
 <h2 id="blog">Blog</h2>
 <hr class="bar-blog">
 
@@ -19,12 +18,7 @@ layout: default
     <p class="post-meta">{{ post.date | date: "%B %-d, %Y — %H:%M" }}{% if post.author %} • {{ post.author }}{% endif %}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
 </div>
 {% endfor %}
-
 <hr class="bar-blog">
+<div class="temp-posts">
 
-<h2>
-    <a href="{{ site.github.url }}/blog">All blog posts >></a>
-</h2>
-
-{% include contact.html %}
-{% include form-contact.html %}
+</div>

@@ -603,7 +603,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
     background-repeat: no-repeat;
     position: fixed;
     left: 5px;
-    top: 0px;
+    top: 0;
     padding-right: 5px;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -634,7 +634,9 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
     background-size: 88px 47px;
     background-repeat: no-repeat;
     float: left;
-    margin: 30px 0 0 30px; } }
+    margin: 30px 0 0 30px; }
+  a.back-to-top {
+    display: none; } }
 
 header {
   background: url(../img/galway2.jpg) center center;
@@ -673,12 +675,12 @@ header {
       header h1 {
         padding-top: 20px;
         font-size: 32px;
-        font-weight: 350; } }
+        font-weight: 300; } }
     @media only screen and (min-width: 650px) {
       header h1 {
         padding-top: 10px;
         font-size: 30px;
-        font-weight: 350; } }
+        font-weight: 300; } }
     @media only screen and (min-width: 1070px) {
       header h1 {
         padding-top: 50px;
@@ -1305,7 +1307,7 @@ form {
     padding-bottom: 100px; }
   .blurb-blog {
     font-size: 15px;
-    font-weight: 30; }
+    font-weight: 300; }
   .honeycombpic {
     width: 270px;
     height: 190px;

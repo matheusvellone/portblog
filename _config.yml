@@ -1,5 +1,6 @@
 name: Gearoid O'Connor
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+permalink: /blog/:year/:month/:day/:title.html
 my:
     name: Matheus P Vellone
     email: matheusvellone@hotmail.com
