@@ -13,7 +13,7 @@ layout: default
 
 {% for post in site.categories['blog'] limit:3 %}
 <div class="post-header title">
-    <a href="{{ post.url }}">
+    <a href="{{ site.github.url }}/{{ post.url }}">
         <h1 class="post-title">
             {{ post.title }}
         </h1>
@@ -31,7 +31,7 @@ layout: default
 <hr class="bar-blog">
 
 <h2>
-    <a href="/posts">
+    <a href="{{ site.github.url }}/posts">
         All posts >>
     </a>
 </h2>
