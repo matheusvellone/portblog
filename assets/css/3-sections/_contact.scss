@@ -46,18 +46,12 @@
   padding-top: 100px;
 }
 
-.biglink {
+.contact-email {
   display: inline-block;
   margin-bottom: 70px;
   color: $color-1;
   font: {
-    size: 72px;
+    size: 30px;
     weight: 300;
   };
-}
-
-.biglink {
-  &:hover {
-    @include transform(scale(1.02));
-  }
 }

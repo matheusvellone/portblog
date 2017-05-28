@@ -910,16 +910,12 @@ footer {
 .blog-end {
   padding-top: 100px; }
 
-.biglink {
+.contact-email {
   display: inline-block;
   margin-bottom: 70px;
   color: #303e49;
-  font-size: 72px;
+  font-size: 30px;
   font-weight: 300; }
-
-.biglink:hover {
-  -webkit-transform: scale(1.02);
-  transform: scale(1.02); }
 
 *, *:after, *:before {
   box-sizing: border-box; }
