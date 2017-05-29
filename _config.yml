@@ -3,6 +3,3 @@ my:
     email: matheusvellone@hotmail.com
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 permalink: /blog/:year/:month/:day/:title.html
-
-github:
-    url: http://localhost:3000
