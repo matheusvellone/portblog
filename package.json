@@ -5,6 +5,7 @@
     "main": "gulpfile.js",
     "scripts": {
         "start": "gulp",
+        "rebuild-gh-page": "git commit -m 'rebuild pages' --allow-empty && git push origin master",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Shane Osbourne",
