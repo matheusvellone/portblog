@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="keywords" content="{{ page.keywords | join: ',' }}">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    {% for cssEntry in css %}
+        <link rel="stylesheet" href="{{ site.github.url }}/assets/css/{{ cssEntry }}.css">
+    {% endfor %}
+</head>
+<body>
+    {{ content }}
+    {% for jsEntry in js %}
+        <script src="{{ site.github.url }}/assets/js/{{ jsEntry }}.js"></script>
+    {% endfor %}
+    <!--<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>-->
+    {% include analytics.html %}
+</body>
+</html>

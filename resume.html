@@ -1,0 +1,20 @@
+---
+layout: base
+permalink: /resume/
+title: My resume
+css:
+    - resume
+js:
+    - main
+---
+
+<div class="wrapper">
+    {% include resume/sidebar.html %}
+    <div class="main-wrapper">
+        {% include resume/career-profile.html %}
+        {% include resume/experience.html %}
+        {% include resume/projects.html %}
+        {% include resume/skills.html %}
+    </div>
+</div>
+{% include resume/footer.html %}
