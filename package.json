@@ -1,34 +1,33 @@
 {
-    "name": "browser-sync-jekyll",
-    "version": "0.0.0",
+    "name": "portblog",
+    "version": "1.0.0",
     "description": "My starter project including full setup for Jekyll, GulpJS, SASS & BrowserSync",
     "main": "gulpfile.js",
     "scripts": {
         "start": "gulp",
-        "rebuild-gh-page": "git commit -m 'rebuild pages' --allow-empty && git push origin master",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "rebuild-gh-page": "git commit -m 'rebuild page' --allow-empty && git push origin gh-pages"
     },
-    "author": "Shane Osbourne",
+    "author": "Matheus Vellone",
     "license": "ISC",
     "devDependencies": {
         "browser-sync": "^2.8.0",
         "gulp": "^3.9.1",
         "gulp-autoprefixer": "2.3.1",
-        "gulp-jade": "^1.0.1",
         "gulp-sass": "^2.0.4"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/bawn92/bawn92.git"
+        "url": "git@github.com:MatheusVellone/portblog.git"
     },
     "keywords": [
         "jekyll",
         "gulp",
         "sass",
-        "browsersync"
+        "browsersync",
+        "github-pages"
     ],
     "bugs": {
-        "url": "https://github.com/bawn92/bawn92.git"
+        "url": "https://github.com/MatheusVellone/portblog/issues"
     },
-    "homepage": "https://github.com/bawn92/bawn92.git"
+    "homepage": "https://matheusvellone.github.io/portblog/"
 }

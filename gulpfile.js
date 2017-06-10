@@ -3,7 +3,6 @@ const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
 const prefix = require('gulp-autoprefixer');
 const cp = require('child_process');
-const jade = require('gulp-jade');
 
 const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -37,13 +36,22 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function () {
     });
 });
 
+gulp.task('fonts', function () {
+    return gulp.src([
+        'assets/**/*.woff'
+    ])
+        .pipe(gulp.dest('_site/assets/fonts'))
+        .pipe(browserSync.reload({stream: true}))
+        // .pipe(gulp.dest('assets/fonts'));
+});
+
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('assets/css/main.scss')
+    return gulp.src('assets/scss/*.scss')
         .pipe(sass({
-            includePaths: ['css'],
+            outputStyle: 'compressed',
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
@@ -57,15 +65,17 @@ gulp.task('sass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**', ['sass']);
+    gulp.watch('assets/scss/**', ['sass']);
+    gulp.watch([
+        'assets/scss/**/*.woff',
+        'assets/fonts/**/*.woff'
+    ], ['fonts']);
     gulp.watch('assets/js/**', ['jekyll-rebuild']);
     gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
-    gulp.watch('assets/js/**', ['jekyll-rebuild']);
-    gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', ['browser-sync', 'watch', 'sass', 'fonts']);

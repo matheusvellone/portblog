@@ -11,13 +11,13 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    {% for cssEntry in css %}
+    {% for cssEntry in page.css %}
         <link rel="stylesheet" href="{{ site.github.url }}/assets/css/{{ cssEntry }}.css">
     {% endfor %}
 </head>
 <body>
     {{ content }}
-    {% for jsEntry in js %}
+    {% for jsEntry in page.js %}
         <script src="{{ site.github.url }}/assets/js/{{ jsEntry }}.js"></script>
     {% endfor %}
     <!--<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>-->
