@@ -1,33 +1,32 @@
 const gulp = require('gulp');
-const browserSync = require('browser-sync');
 const sass = require('gulp-sass');
+const rename = require("gulp-rename");
 const prefix = require('gulp-autoprefixer');
+const sassVariables = require('gulp-sass-variables');
+const browserSync = require('browser-sync');
 const cp = require('child_process');
 
-const messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
+process.env.NODE_ENV = 'dev';
 
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('jekyll.bat', ['build'], {stdio: 'inherit'})
+gulp.task('jekyll-build', (done) => {
+    return cp.spawn('jekyll', ['build'], { stdio: 'inherit' })
         .on('close', done);
 });
 
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
     browserSync.reload();
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function () {
+gulp.task('browser-sync', ['sass', 'jekyll-build'], () => {
     browserSync({
         server: {
             baseDir: '_site'
@@ -36,42 +35,48 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function () {
     });
 });
 
-gulp.task('fonts', function () {
+/**
+ * Copy font files to the
+ */
+gulp.task('fonts', () => {
     return gulp.src([
-        'assets/**/*.woff'
+        'assets/fonts/**/*.eot',
+        'assets/fonts/**/*.svg',
+        'assets/fonts/**/*.ttf',
+        'assets/fonts/**/*.woff',
     ])
         .pipe(gulp.dest('_site/assets/fonts'))
-        .pipe(browserSync.reload({stream: true}))
-        // .pipe(gulp.dest('assets/fonts'));
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
-gulp.task('sass', function () {
+gulp.task('sass', () => {
     return gulp.src('assets/scss/*.scss')
+        .pipe(sassVariables({
+            $env: process.env.NODE_ENV,
+        }))
         .pipe(sass({
             outputStyle: 'compressed',
             onError: browserSync.notify
         }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('_site/assets/css'))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(browserSync.reload({ stream: true }))
         .pipe(gulp.dest('assets/css'));
 });
 
 /**
  * Watch scss files for changes & recompile
+ * Watch font files
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     gulp.watch('assets/scss/**', ['sass']);
-    gulp.watch([
-        'assets/scss/**/*.woff',
-        'assets/fonts/**/*.woff'
-    ], ['fonts']);
+    gulp.watch('assets/fonts/**/*', ['fonts']);
     gulp.watch('assets/js/**', ['jekyll-rebuild']);
-    gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
+    gulp.watch(['index.html', '_layouts/*.html', '_includes/**/*'], ['jekyll-rebuild']);
 });
 
 /**

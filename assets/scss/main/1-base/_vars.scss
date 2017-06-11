@@ -47,6 +47,13 @@ $text-color: #666;
 
 $theme-color: $red;
 
+$env: 'prod' !default;
 $baseURL: 'https://matheusvellone.github.io/portblog/';
+
+@if ($env =='dev') {
+    $baseURL: 'http://localhost:3000/';
+}
+
+@warn "Invalid color name: `#{$baseURL}`.";
 $baseAssetsURL: $baseURL + 'assets/';
 $baseImageURL: $baseAssetsURL + 'img/';

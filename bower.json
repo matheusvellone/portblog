@@ -1,0 +1,28 @@
+{
+  "name": "portblog",
+  "description": "My starter project including full setup for Jekyll, GulpJS, SASS & BrowserSync",
+  "main": "gulpfile.js",
+  "authors": [
+    "Matheus Vellone"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "jekyll",
+    "gulp",
+    "sass",
+    "browsersync",
+    "github-pages"
+  ],
+  "homepage": "https://github.com/MatheusVellone/portblog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}
